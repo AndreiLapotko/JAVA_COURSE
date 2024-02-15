@@ -1,3 +1,5 @@
+package Seminar05;
+
 import java.util.HashMap;
 import java.util.Map;
 

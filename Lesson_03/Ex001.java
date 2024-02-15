@@ -34,7 +34,7 @@ public class Ex001 {
         int center = newLength / 2;
         ArrayList<Integer> list = new ArrayList<>(newLength);
 
-        // int[] temp = new int[newLength];
+        int[] temp = new int[newLength];
         System.arraycopy(array, 0, temp, 0, center);
         temp[center] = item;
         for (int i = center + 1; i < newLength; i++) {

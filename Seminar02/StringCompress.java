@@ -4,20 +4,20 @@
 
 package Seminar02;
 
-public class CompressString {
+// public class CompressString {
 
-    public static void main(String[] args) {
-        String str = "aaaabbbcdd";
-    }
+//     public static void main(String[] args) {
+//         String str = "aaaabbbcdd";
+//     }
 
-    public static void CompressString (String str) {
-        StringBuilder result = new StringBuilder();
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
+//     public static void CompressString (String str) {
+//         StringBuilder result = new StringBuilder();
+//         int count = 0;
+//         for (int i = 0; i < str.length(); i++) {
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 public class StringCompress {
