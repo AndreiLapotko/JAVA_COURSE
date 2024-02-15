@@ -1,0 +1,6 @@
+февр. 05, 2024 7:56:11 PM Seminar02.ContentFolder writeFile
+SEVERE: java.io.FileNotFoundException: . (Отказано в доступе)
+февр. 05, 2024 7:56:11 PM Seminar02.ContentFolder main
+INFO: Тест
+февр. 05, 2024 7:56:11 PM Seminar02.ContentFolder main
+INFO: test
