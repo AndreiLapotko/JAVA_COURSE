@@ -12,30 +12,32 @@
 4 - Цвет …
 -Далее нужно запросить минимальные значения для указанных критериев - сохранить
 параметры фильтрации можно также в Map.
--Отфильтровать ноутбуки их первоначального множества и вывести проходящие по
+-Отфильтровать ноутбуки из первоначального множества и вывести проходящие по
 условиям.
  */
 package Seminar06.HomeWork;
 
-public class NoteBook {
+import java.util.Objects;
+
+public class Laptop {
     private String brand;
     private String model;
-    private int size;
+    private byte size;
     private String cpu;
     private int ramSize;
-    private int price;
+    private double price;
 
     /**
-     * конструктор класса NoteBook
+     * конструктор класса Laptop
      * 
-     * @param brand   название бренда
+     * @param brand   наименование бренда
      * @param model   модель ноутбука
-     * @param size    размер (диагональ)
-     * @param cpu     марка процессора
-     * @param ramSize объём оперативной памяти
+     * @param size    размер (диагональ экрана)
+     * @param cpu     микропроцессор
+     * @param ramSize объём памяти
      * @param price   цена
      */
-    public NoteBook(String brand, String model, int size, String cpu, int ramSize, int price) {
+    public Laptop(String brand, String model, byte size, String cpu, int ramSize, double price) {
         this.brand = brand;
         this.model = model;
         this.size = size;
@@ -52,7 +54,7 @@ public class NoteBook {
         return model;
     }
 
-    public int getSize() {
+    public byte getSize() {
         return size;
     }
 
@@ -64,7 +66,7 @@ public class NoteBook {
         return ramSize;
     }
 
-    public int getHDDSize() {
+    public double getPrice() {
         return price;
     }
 
@@ -76,7 +78,7 @@ public class NoteBook {
         this.model = model;
     }
 
-    public void setSize(int size) {
+    public void setSize(byte size) {
         this.size = size;
     }
 
@@ -88,8 +90,34 @@ public class NoteBook {
         this.ramSize = ramSize;
     }
 
-    public void setHDDSize(int hddSize) {
-        this.price = hddSize;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
+    private String getInfo() {
+        return String.format(
+                "Наименование: \t\t%s %s \nРазмер (диагональ): \t%d \nПроцессор: \t\t%s \nОбъём памяти: \t\t%d Гб\nЦена: \t\t\t%d",
+                brand, model, size, cpu, ramSize, price);
+    }
+    // @Override
+    // public String toString() {
+    // return getInfo();
+    // }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, size, cpu, ramSize, price);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+        Laptop laptop = (Laptop) obj;
+        return brand.equals(laptop.brand) && model.equals(laptop.model) && size == laptop.size && cpu.equals(laptop.cpu) && ramSize == laptop.ramSize;// && price == laptop.price;
+    }
 }
